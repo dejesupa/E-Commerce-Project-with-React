@@ -13,13 +13,14 @@ function App() {
       <div className="App">
         <Nav />
         <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/books" element={<Books books={books} />} />
+        <Route path="/" exact component={Home} />
+        <Route path="/books" render={() => <Books books={books} />} />
+        <Route path="/books1" render={() => <Bookinfo books={books} />} />
               {/* <Route path="/books" element={() => <Books books={books} />} /> */}
-        <Route path="/books/:id" element={<Bookinfo books={books}
+        {/* <Route path="/books/:id" element={<Bookinfo books={books}
         addToCart={addToCart} cart={cart} />}/>
         <Route path="/cart" element={<Cart books={books} cart={cart}
-        changeQuantity={changeQuantity} />} />
+        changeQuantity={changeQuantity} />} /> */}
       </Routes>
         <Footer />
       </div>
