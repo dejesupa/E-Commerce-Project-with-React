@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Books from "./pages/Books";
 import { books } from "./data";
 import Footer from "./Components/Footer";
-import Bookinfo from "./pages/Bookinfo";
 
 
 function App() {
@@ -12,10 +11,11 @@ function App() {
     <Router>
       <div className="App">
         <Nav />
-        <Routes>
+      
+         <Routes>
         <Route path="/" exact component={Home} />
         <Route path="/books" render={() => <Books books={books} />} />
-        <Route path="/books1" render={() => <Bookinfo books={books} />} />
+        
               {/* <Route path="/books" element={() => <Books books={books} />} /> */}
         {/* <Route path="/books/:id" element={<Bookinfo books={books}
         addToCart={addToCart} cart={cart} />}/>
@@ -23,6 +23,7 @@ function App() {
         changeQuantity={changeQuantity} />} /> */}
       </Routes>
         <Footer />
+    
       </div>
      </Router>
   );
